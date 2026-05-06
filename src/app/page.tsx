@@ -16,7 +16,7 @@ export default function Home() {
           {/* <div className="absolute inset-0 rounded-full bg-gradient-to-b from-pink-500 via-orange-400 to-yellow-300 blur-3xl opacity-80 scale-[2]" /> */}
           {/* <div className="absolute inset-0 rounded-full bg-gradient-to-b from-pink-400 to-orange-500 blur-xl opacity-60 scale-150" /> */}
           <Image
-            src="/assets/profile.png"
+            src="https://avatars.githubusercontent.com/u/123901859?v=4"
             alt="Louyse Praxedes"
             width={200}
             height={200}
