@@ -16,7 +16,7 @@ export default function Home() {
           {/* <div className="absolute inset-0 rounded-full bg-gradient-to-b from-pink-500 via-orange-400 to-yellow-300 blur-3xl opacity-80 scale-[2]" /> */}
           {/* <div className="absolute inset-0 rounded-full bg-gradient-to-b from-pink-400 to-orange-500 blur-xl opacity-60 scale-150" /> */}
           <Image
-            src="https://avatars.githubusercontent.com/u/123901859?v=4"
+            src="/assets/profile.png"
             alt="Louyse Praxedes"
             width={200}
             height={200}
@@ -35,7 +35,7 @@ export default function Home() {
             Senior Product Designer
           </p>
         </div>
-        <p className="max-w-md text-lg leading-8 text-zinc-700 dark:text-zinc-300">
+        {/* <p className="max-w-md text-lg leading-8 text-zinc-700 dark:text-zinc-300">
           I’ve been working as a UX Designer for over 6 years, creating digital solutions in agile and collaborative environments. My core skills include user research, interface design, and prototyping, always focused on delivering intuitive and functional experiences.
 
 In addition to my UX expertise, I bring 11 years of experience as a Designer, with a strong background in UI, Visual Design, and Branding. This multidisciplinary foundation enhances my ability to connect aesthetics, strategy, and usability in every project.
@@ -43,7 +43,7 @@ In addition to my UX expertise, I bring 11 years of experience as a Designer, wi
 Recently, I contributed to the implementation of a portfolio sharing feature, optimizing user flows and improving interaction between advisors and clients. I also integrate artificial intelligence into my workflow to streamline processes, speed up design stages, and enhance user experience.
 
 My work is guided by data, active listening, and cross-functional collaboration. I'm driven by the goal of creating digital experiences that are both human-centered and strategically aligned with business objectives.
-        </p>
+        </p> */}
         {/* <div className="flex gap-4">
           <Link
             href="/projects"
