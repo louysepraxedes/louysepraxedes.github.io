@@ -34,6 +34,13 @@ jobs:
       - name: Build with Next.js 🏗️
         run: npx next build
 
+      - name: Debug exported site 📋
+        run: |
+          echo "Export directory contents:"
+          find ./out -maxdepth 2 | sort
+          echo "\nSample index.html header:"
+          head -20 ./out/index.html || true
+
       - name: Upload artifact 📡
         uses: actions/upload-pages-artifact@v3
         with:
