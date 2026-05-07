@@ -11,9 +11,9 @@ const projects = [
   { id: 4, title: "Lillo 2013/2014", category: "Visual Design & Social Media", img: "/assets/p4-lillo.png" },
   {id: 5, title: "SupraSoy 2013/2014", category: "Visual Design & Social Media", img: "/assets/p5-suprasoy-sports.png" },
   {id: 6, title: "Miró Marketing", category: "Brand Development", img: "/assets/p6-miro-branding.png" },//
-  {id: 7, title: "Miscelaneous", category: "Social Media Posts", img: "/assets/p7-miscelaneous.png" },
+  {id: 7, title: "Gorilla - Mobile App", category: "UX Design", img: "/assets/p7-gorilla-mobile-app.png" },
   {id: 8, title: "Não + Fat", category: "Brand Development", img: "/assets/p8-nao-fat.png" },
-  {id: 9, title: "Coca-Cola Project", category: "Fictional Project", img: "/assets/p9-suprasoy-sports.png" },
+  {id: 9, title: "Coca-Cola Project", category: "Fictional Project", img: "/assets/p9-coca-cola-fictional.png" },
   {id: 10, title: "Água Viva", category: "Visual Design", img: "/assets/p10-agua-viva-web.png" },
   {id: 11, title: "Azul TI", category: "Visual Design", img: "/assets/p11-azul-ti-web.png" },
   {id: 12, title: "Connecting Plus", category: "Visual Design", img: "/assets/p12-connecting-plus-web.png" },
@@ -24,7 +24,6 @@ const projects = [
   {id: 17, title: "Piccolo Bar e Flair", category: "Visual Design", img: "/assets/p17-piccolo-bar-e-flair-web.png" },
   {id: 18, title: "Sabiá Laranjeira Special Coffee", category: "Visual Design", img: "/assets/p18-sabia-laranjeira-special-coffee-web.png" },
   {id: 19, title: "Varb Metalúrgica", category: "Visual Design", img: "/assets/p19-varb-metalurgica-web.png" },
-  {id: 20, title: "Gorilla - Mobile App", category: "UX Design", img: "/assets/p20-gorilla-mobile-app.png" },
   {id: 21, title: "Pra Construir - Marketplace", category: "UX/UI Design", img: "/assets/p21-pra-construir-marketplace-web.png" },
 ];
 
