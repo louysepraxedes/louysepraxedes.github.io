@@ -1,2 +1,37 @@
-[00:00:00.854] Server  LOG     ✓ Ready in 546ms
-[00:00:06.056] Server  LOG     ○ Compiling / ...
+[00:00:00.876] Server  LOG     ✓ Ready in 632ms
+[00:00:02.903] Server  WARN    ⚠ Cross origin request detected from 192.168.0.82 to /_next/* resource. In a future major version of Next.js, you will need to explicitly configure "allowedDevOrigins" in next.config to allow this.
+Read more: https://nextjs.org/docs/app/api-reference/config/next-config-js/allowedDevOrigins
+[00:00:03.078] Browser WARN    Image with src "/assets/profile.png" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
+[00:00:12.542] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:13.035] Browser WARN    Image with src "/assets/profile.png" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
+[00:00:19.810] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:19.934] Browser WARN    Image with src "/assets/profile.png" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
+[00:00:26.297] Browser WARN    Image with src "/assets/profile.png" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
+[00:00:28.683] Browser WARN    Image with src "/assets/profile.png" was detected as the Largest Contentful Paint (LCP). Please add the `loading="eager"` property if this image is above the fold.
+Read more: https://nextjs.org/docs/app/api-reference/components/image#loading
+[00:00:52.581] Server  LOG     ✓ Compiled in 267ms
+[00:01:08.378] Server  LOG     ✓ Compiled in 15ms
+[00:01:08.481] Browser ERROR   ./src/app/page.tsx:19:16
+Parsing ecmascript source code failed
+  17 |           {/* <div className="absolute inset-0 rounded-full bg-gradient-to-b from-pink-400 to-orange-500 blur-xl opacity-60 scale-150" /> */}
+  18 |         </div>
+> 19 |       </div> */}
+     |                ^
+  20 |       
+  21 |       <div ref={containerRef} className="fixed inset-0 z-[5]" />
+  22 |       
+
+Expected ',', got '}'
+
+Import traces:
+  Client Component Browser:
+    ./src/app/page.tsx [Client Component Browser]
+    ./src/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./src/app/page.tsx [Client Component SSR]
+    ./src/app/page.tsx [Server Component]

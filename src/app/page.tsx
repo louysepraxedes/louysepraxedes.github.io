@@ -11,22 +11,23 @@ export default function Home() {
   return (
     <div className="relative min-h-screen overflow-hidden">
       {/* Profile image as the sun - fixed in background */}
-      <div className="fixed inset-x-0 top-[15%] flex justify-center z-[1] pointer-events-none">
+      {/* <div className="fixed inset-x-0 top-[15%] flex justify-center z-[1] pointer-events-none">
         <div className="relative">
-          {/* <div className="absolute inset-0 rounded-full bg-gradient-to-b from-pink-500 via-orange-400 to-yellow-300 blur-3xl opacity-80 scale-[2]" /> */}
-          {/* <div className="absolute inset-0 rounded-full bg-gradient-to-b from-pink-400 to-orange-500 blur-xl opacity-60 scale-150" /> */}
-          <Image
+          <div className="absolute inset-0 rounded-full bg-gradient-to-b from-pink-500 via-orange-400 to-yellow-300 blur-3xl opacity-80 scale-[2]" />
+          <div className="absolute inset-0 rounded-full bg-gradient-to-b from-pink-400 to-orange-500 blur-xl opacity-60 scale-150" />
+        </div>
+      </div> */}
+      
+      <div ref={containerRef} className="fixed inset-0 z-[5]" />
+      
+      <div className="relative flex flex-col items-center text-center space-y-8 min-h-screen pt-[45vh] pb-16 z-20">
+                  <Image
             src="/assets/profile.png"
             alt="Louyse Praxedes"
             width={200}
             height={200}
             className="relative rounded-full"
           />
-        </div>
-      </div>
-      
-      <div ref={containerRef} className="fixed inset-0 z-[5]" />
-      <div className="relative flex flex-col items-center text-center space-y-8 min-h-screen pt-[45vh] pb-16 z-20">
         <div>
           <h1 className="text-5xl font-bold bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent">
             Louyse Praxedes
