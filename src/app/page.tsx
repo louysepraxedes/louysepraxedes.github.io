@@ -1,66 +1,123 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { useRef } from "react";
 
-export default function Home() {
-  const containerRef = useRef<HTMLDivElement>(null);
+const projects = [
+  { id: 1, title: "Somos Cataguá 2019/2020", category: "Visual Design", img: "/assets/p1-catagua-construtora.jpg" },
+  { id: 2, title: "Health Awareness Campaigns", category: "Visual Design & Endomarketing", img: "/assets/p2-catagua-construtora-saude.png" },
+  { id: 3, title: "Connecting Plus 2016", category: "Xilogravura & Social Media", img: "/assets/p3-connecting-plus.png" },
+  { id: 4, title: "Lillo 2013/2014", category: "Visual Design & Social Media", img: "/assets/p4-lillo.png" },
+  {id: 5, title: "SupraSoy 2013/2014", category: "Visual Design & Social Media", img: "/assets/p5-suprasoy-sports.png" },
+  {id: 6, title: "Miró Marketing", category: "Brand Development", img: "/assets/p6-miro-branding.png" },
+];
 
+export default function Portfolio() {
+  const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
+
+  // Magic: Tracking mouse for the subtle "spotlight" effect
+  useEffect(() => {
+    const handleMouseMove = (e: MouseEvent) => {
+      setMousePos({ x: e.clientX, y: e.clientY });
+    };
+    window.addEventListener("mousemove", handleMouseMove);
+    return () => window.removeEventListener("mousemove", handleMouseMove);
+  }, []);
 
   return (
-    <div className="relative min-h-screen overflow-hidden">
-      {/* Profile image as the sun - fixed in background */}
-      {/* <div className="fixed inset-x-0 top-[15%] flex justify-center z-[1] pointer-events-none">
-        <div className="relative">
-          <div className="absolute inset-0 rounded-full bg-gradient-to-b from-pink-500 via-orange-400 to-yellow-300 blur-3xl opacity-80 scale-[2]" />
-          <div className="absolute inset-0 rounded-full bg-gradient-to-b from-pink-400 to-orange-500 blur-xl opacity-60 scale-150" />
+    <div className="relative min-h-screen bg-[#fcfaf8] text-zinc-900 overflow-x-hidden selection:bg-orange-100">
+      
+      {/* MAGIC LAYER 1: Interactive Spotlight */}
+      <div 
+        className="pointer-events-none fixed inset-0 z-30 transition-opacity duration-300"
+        style={{
+          background: `radial-gradient(600px circle at ${mousePos.x}px ${mousePos.y}px, rgba(124, 77, 255, 0.09), transparent 80%)`
+        }}
+      />
+
+      {/* MAGIC LAYER 2: Animated Mesh Gradients (Background) */}
+      <div className="fixed inset-0 -z-10 overflow-hidden">
+        <div className="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] rounded-full bg-orange-200/30 blur-[120px] animate-pulse" />
+        <div className="absolute bottom-[10%] right-[-5%] w-[40%] h-[40%] rounded-full bg-pink-200/20 blur-[100px] animate-bounce" style={{ animationDuration: '10s' }} />
+      </div>
+
+      {/* Navigation */}
+      <nav className="fixed top-0 w-full z-50 flex justify-between items-center px-10 py-8 mix-blend-multiply">
+        <div className="text-3xl font-serif tracking-tighter font-bold">LP</div>
+        <div className="flex gap-8 text-[10px] uppercase tracking-[0.2em] font-bold">
+          <Link href="#work" className="hover:text-orange-600 transition">Works</Link>
+          <Link href="#about" className="hover:text-orange-600 transition">About</Link>
+          <Link href="#contact" className="hover:text-orange-600 transition">Contact</Link>
         </div>
-      </div> */}
-      
-      <div ref={containerRef} className="fixed inset-0 z-[5]" />
-      
-      <div className="relative flex flex-col items-center text-center space-y-8 min-h-screen pt-[45vh] pb-16 z-20">
-                  <Image
-            src="/assets/profile.png"
-            alt="Louyse Praxedes"
-            width={200}
-            height={200}
-            className="relative rounded-full"
-          />
-        <div>
-          <h1 className="text-5xl font-bold bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent">
+      </nav>
+
+      {/* Hero Section */}
+      <section className="relative h-screen flex flex-col justify-center items-center text-center px-6">
+        {/* The "Sun" Gradient from your inspiration */}
+        <div className="absolute w-[500px] h-[500px] md:w-[700px] md:h-[700px] rounded-full bg-gradient-to-tr from-orange-300 via-pink-200 to-transparent blur-[80px] opacity-40 animate-spin-slow" />
+        
+        <div className="relative z-10">
+          <h1 className="text-7xl md:text-9xl font-serif tracking-tighter leading-tight">
             Louyse Praxedes
           </h1>
-          <p className="text-xl text-zinc-700 dark:text-zinc-300 mt-2">
+          <p className="text-sm md:text-base uppercase tracking-[0.4em] font-light mt-4 text-zinc-500">
             Senior Product Designer
           </p>
         </div>
-        {/* <p className="max-w-md text-lg leading-8 text-zinc-700 dark:text-zinc-300">
-          I’ve been working as a UX Designer for over 6 years, creating digital solutions in agile and collaborative environments. My core skills include user research, interface design, and prototyping, always focused on delivering intuitive and functional experiences.
 
-In addition to my UX expertise, I bring 11 years of experience as a Designer, with a strong background in UI, Visual Design, and Branding. This multidisciplinary foundation enhances my ability to connect aesthetics, strategy, and usability in every project.
+        <div className="absolute bottom-10 animate-bounce text-zinc-400">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+            <path d="M7 13l5 5 5-5M7 6l5 5 5-5" />
+          </svg>
+        </div>
+      </section>
 
-Recently, I contributed to the implementation of a portfolio sharing feature, optimizing user flows and improving interaction between advisors and clients. I also integrate artificial intelligence into my workflow to streamline processes, speed up design stages, and enhance user experience.
+      {/* Works Grid */}
+      <section id="work" className="relative z-20 max-w-7xl mx-auto px-6 py-24">
+        <div className="flex justify-between items-end mb-16">
+          <h2 className="text-4xl font-serif">Selected Work</h2>
+          <span className="text-[10px] uppercase tracking-widest text-zinc-400">© 2026</span>
+        </div>
 
-My work is guided by data, active listening, and cross-functional collaboration. I'm driven by the goal of creating digital experiences that are both human-centered and strategically aligned with business objectives.
-        </p> */}
-        {/* <div className="flex gap-4">
-          <Link
-            href="/projects"
-            className="px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-600 text-white font-medium rounded-lg shadow-lg hover:shadow-xl transition-shadow"
-          >
-            View Projects
-          </Link>
-          <Link href="/contact" className="px-6 py-3 border border-zinc-300 dark:border-zinc-700 text-zinc-900 dark:text-zinc-50 font-medium rounded-lg hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors">
-          Contact Me
-        </Link>
-        </div> */}
-      </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-x-12 md:gap-y-24">
+          {projects.map((project) => (
+            <Link href={`/project/${project.id}`} key={project.id} className="group block">
+              <div className="relative aspect-[4/3] overflow-hidden rounded-sm bg-zinc-100">
+                {/* Image with Magic Color Filter on Hover */}
+                <Image
+                  src={project.img}
+                  alt={project.title}
+                  fill
+                  className="object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 ease-in-out"
+                />
+                {/* Glassmorphism Overlay */}
+                <div className="absolute inset-0 bg-orange-900/0 group-hover:bg-orange-500/10 transition-colors duration-500" />
+                
+                <div className="absolute bottom-6 left-6 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
+                  <span className="bg-white/90 backdrop-blur-md px-4 py-2 text-[10px] uppercase font-bold tracking-widest rounded-full">
+                    View Case Study
+                  </span>
+                </div>
+              </div>
 
-      {/* Retro Polish: Vignette and CRT Lines */}
-      <div className="fixed inset-0 pointer-events-none bg-[radial-gradient(circle,transparent_40%,rgba(0,0,0,0.8)_100%)]" />
-      <div className="fixed inset-0 pointer-events-none opacity-10 bg-[url('https://grainy-gradients.vercel.app/noise.svg')]" />
+              <div className="mt-6">
+                <h3 className="text-xl font-medium tracking-tight">{project.title}</h3>
+                <p className="text-sm text-zinc-500 font-light">{project.category}</p>
+              </div>
+            </Link>
+          ))}
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <footer className="py-32 px-6 text-center border-t border-zinc-100">
+        <h2 className="text-5xl md:text-7xl font-serif  mb-8">Let's create.</h2>
+        <a href="mailto:loupraxedes@gmail.com" className="text-lg border-b border-zinc-900 pb-1 hover:text-orange-600 hover:border-orange-600 transition-all">
+          loupraxedes@gmail.com
+        </a>
+      </footer>
+
     </div>
   );
 }
