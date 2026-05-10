@@ -2,9 +2,11 @@
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
-import Link from "next/link";
+import {NebulaBackground} from "@/components/NebulaBackground";
+// import Link from "next/link";
 
 const projects = [
+  {id: 7, title: "Gorilla - Mobile App", category: "User Experience", img: "/assets/Gorila/p7-gorilla-mobile-app.png" },
   {id: 0, title: "Plenno", category: "User Experience", img: "/assets/Plenno/p0-plenno.png" },
   { id: 1, title: "Somos Cataguá 2019/2020", category: "Visual Design", img: "/assets/p1-catagua-construtora.jpg" },
   { id: 2, title: "Health Awareness Campaigns", category: "Visual Design & Endomarketing", img: "/assets/p2-catagua-construtora-saude.png" },
@@ -12,7 +14,6 @@ const projects = [
   { id: 4, title: "Lillo 2013/2014", category: "Visual Design & Social Media", img: "/assets/p4-lillo.png" },
   {id: 5, title: "SupraSoy 2013/2014", category: "Visual Design & Social Media", img: "/assets/p5-suprasoy-sports.png" },
   {id: 6, title: "Miró Marketing", category: "Brand Development", img: "/assets/p6-miro-branding.png" },//
-  {id: 7, title: "Gorilla - Mobile App", category: "UX Design", img: "/assets/Gorila/p7-gorilla-mobile-app.png" },
   {id: 8, title: "Não + Fat", category: "Brand Development", img: "/assets/p8-nao-fat.png" },
   {id: 9, title: "Coca-Cola Project", category: "Fictional Project", img: "/assets/p9-coca-cola-fictional.png" },
   {id: 10, title: "Água Viva", category: "Visual Design", img: "/assets/p10-agua-viva-web.png" },
@@ -58,9 +59,30 @@ export default function Portfolio() {
       </div>
 
       {/* Hero Section */}
-      <section className="relative h-screen flex flex-col justify-center items-center text-center px-6">
+    <section className="relative h-screen flex flex-col justify-center items-center text-center px-6 overflow-hidden">
+      {/* The Three JS / Canvas Nebula */}
+      <NebulaBackground />
+
+      <div className="relative z-10 select-none">
+        <h1 className="text-7xl md:text-6xl font-serif tracking-tighter leading-tight text-white mix-blend-difference">
+          Louyse Praxedes
+        </h1>
+        <p className="text-sm md:text-base uppercase tracking-[0.5em] font-light mt-6 text-zinc-400">
+          Senior Product Designer
+        </p>
+      </div>
+
+      {/* Decorative Gradient Overlay for depth */}
+      <div className="absolute inset-0 z-5 pointer-events-none bg-[radial-gradient(circle_at_center,_transparent_0%,_black_90%)] opacity-60" />
+
+      {/* Scroll Indicator */}
+      <div className="absolute bottom-10 animate-bounce flex flex-col items-center gap-4">
+        <div className="w-[1px] h-16 bg-gradient-to-b from-white to-transparent" />
+      </div>
+    </section>
+      {/* <section className="relative h-screen flex flex-col justify-center items-center text-center px-6"> */}
         {/* The "Sun" Gradient from your inspiration */}
-        <div className="absolute w-[500px] h-[500px] md:w-[700px] md:h-[700px] rounded-full bg-gradient-to-tr from-violet-300 via-pink-200 to-transparent blur-[80px] opacity-40 animate-spin-slow" />
+        {/* <div className="absolute w-[500px] h-[500px] md:w-[700px] md:h-[700px] rounded-full bg-gradient-to-tr from-violet-300 via-pink-200 to-transparent blur-[80px] opacity-40 animate-spin-slow" />
         
         <div className="relative z-10">
           <h1 className="text-7xl md:text-9xl font-serif tracking-tighter leading-tight">
@@ -76,7 +98,7 @@ export default function Portfolio() {
             <path d="M7 13l5 5 5-5M7 6l5 5 5-5" />
           </svg>
         </div>
-      </section>
+      </section> */}
 
       {/* Works Grid */}
       <section id="work" className="relative z-20 max-w-7xl mx-auto px-6 py-24">

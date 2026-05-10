@@ -4,7 +4,7 @@ import {  FaLinkedin, FaBehanceSquare } from "react-icons/fa";
 
 export default function Footer() {
   return (
-    <footer className="relative bg-white dark:bg-violet-600 border-t border-zinc-200 dark:border-zinc-800 z-40">
+    <footer className="relative bg-white dark:bg-zinc-900 border-t border-zinc-200 dark:border-zinc-800 z-40">
       <div className="max-w-3xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
         <div className="flex justify-center space-x-6">
           <a href="https://www.linkedin.com/in/loupraxedes/" target="_blank" rel="noopener noreferrer" className="text-zinc-50 hover:text-violet-200 transition-colors">
