@@ -5,13 +5,14 @@ import Image from "next/image";
 import Link from "next/link";
 
 const projects = [
+  {id: 0, title: "Plenno", category: "User Experience", img: "/assets/Plenno/p0-plenno.png" },
   { id: 1, title: "Somos Cataguá 2019/2020", category: "Visual Design", img: "/assets/p1-catagua-construtora.jpg" },
   { id: 2, title: "Health Awareness Campaigns", category: "Visual Design & Endomarketing", img: "/assets/p2-catagua-construtora-saude.png" },
   { id: 3, title: "Connecting Plus 2016", category: "Xilogravura & Social Media", img: "/assets/p3-connecting-plus.png" },
   { id: 4, title: "Lillo 2013/2014", category: "Visual Design & Social Media", img: "/assets/p4-lillo.png" },
   {id: 5, title: "SupraSoy 2013/2014", category: "Visual Design & Social Media", img: "/assets/p5-suprasoy-sports.png" },
   {id: 6, title: "Miró Marketing", category: "Brand Development", img: "/assets/p6-miro-branding.png" },//
-  {id: 7, title: "Gorilla - Mobile App", category: "UX Design", img: "/assets/p7-gorilla-mobile-app.png" },
+  {id: 7, title: "Gorilla - Mobile App", category: "UX Design", img: "/assets/Gorila/p7-gorilla-mobile-app.png" },
   {id: 8, title: "Não + Fat", category: "Brand Development", img: "/assets/p8-nao-fat.png" },
   {id: 9, title: "Coca-Cola Project", category: "Fictional Project", img: "/assets/p9-coca-cola-fictional.png" },
   {id: 10, title: "Água Viva", category: "Visual Design", img: "/assets/p10-agua-viva-web.png" },
@@ -56,16 +57,6 @@ export default function Portfolio() {
         <div className="absolute bottom-[10%] right-[-5%] w-[40%] h-[40%] rounded-full bg-pink-200/20 blur-[100px] animate-bounce" style={{ animationDuration: '10s' }} />
       </div>
 
-      {/* Navigation */}
-      <nav className="fixed top-0 w-full z-50 flex justify-between items-center px-10 py-8 mix-blend-multiply">
-        <div className="text-3xl font-serif tracking-tighter font-bold">LP</div>
-        <div className="flex gap-8 text-[10px] uppercase tracking-[0.2em] font-bold">
-          <Link href="#work" className="hover:text-violet-600 transition">Works</Link>
-          <Link href="#about" className="hover:text-violet-600 transition">About</Link>
-          <Link href="#contact" className="hover:text-violet-600 transition">Contact</Link>
-        </div>
-      </nav>
-
       {/* Hero Section */}
       <section className="relative h-screen flex flex-col justify-center items-center text-center px-6">
         {/* The "Sun" Gradient from your inspiration */}
@@ -96,7 +87,8 @@ export default function Portfolio() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-x-12 md:gap-y-24">
           {projects.map((project) => (
-            <Link href={`/project/${project.id}`} key={project.id} className="group block">
+            // <Link href={`/project/${project.id}`} key={project.id} className="group block">
+            <div key={project.id} className="group block">
               <div className="relative aspect-[4/3] overflow-hidden rounded-sm bg-zinc-100">
                 {/* Image with Magic Color Filter on Hover */}
                 <Image
@@ -119,7 +111,8 @@ export default function Portfolio() {
                 <h3 className="text-xl font-medium tracking-tight">{project.title}</h3>
                 <p className="text-sm text-zinc-500 font-light">{project.category}</p>
               </div>
-            </Link>
+            </div>
+            // </Link>
           ))}
         </div>
       </section>
