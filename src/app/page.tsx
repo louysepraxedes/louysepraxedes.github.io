@@ -16,17 +16,17 @@ const projects = [
   {id: 6, title: "Miró Marketing", category: "Brand Development", img: "/assets/p6-miro-branding.png" },//
   {id: 8, title: "Não + Fat", category: "Brand Development", img: "/assets/p8-nao-fat.png" },
   {id: 9, title: "Coca-Cola Project", category: "Fictional Project", img: "/assets/p9-coca-cola-fictional.png" },
-  {id: 10, title: "Água Viva", category: "Visual Design", img: "/assets/p10-agua-viva-web.png" },
+  {id: 10, title: "Água Viva", category: "Visual Design", img: "/assets/AguaViva/p10-agua-viva-web.png" },
   {id: 11, title: "Azul TI", category: "Visual Design", img: "/assets/p11-azul-ti-web.png" },
   {id: 12, title: "Connecting Plus", category: "Visual Design", img: "/assets/p12-connecting-plus-web.png" },
   {id: 13, title: "Jaque Borges", category: "Visual Design", img: "/assets/p13-jaque-borges-web.png" },
-  {id: 14, title: "LAP", category: "Visual Design", img: "/assets/p14-lap-web.png" },
-  {id: 15, title: "Neuronio Adicional", category: "Visual Design", img: "/assets/p15-neuronio-adicional-web.png" },
-  {id: 16, title: "Pet Molhado", category: "Visual Design", img: "/assets/p16-pet-molhado-web.png" },
-  {id: 17, title: "Piccolo Bar e Flair", category: "Visual Design", img: "/assets/p17-piccolo-bar-e-flair-web.png" },
-  {id: 18, title: "Sabiá Laranjeira Special Coffee", category: "Visual Design", img: "/assets/p18-sabia-laranjeira-special-coffee-web.png" },
-  {id: 19, title: "Varb Metalúrgica", category: "Visual Design", img: "/assets/p19-varb-metalurgica-web.png" },
-  {id: 21, title: "Pra Construir - Marketplace", category: "UX/UI Design", img: "/assets/p21-pra-construir-marketplace-web.png" },
+  {id: 14, title: "LAP", category: "Visual Design", img: "/assets/LAP/p14-lap-web.png" },
+  {id: 15, title: "Neuronio Adicional", category: "Visual Design", img: "/assets/NeuronioAdicional/p15-neuronio-adicional-web.png" },
+  {id: 16, title: "Pet Molhado", category: "Visual Design", img: "/assets/PetMolhado/p16-pet-molhado-web.png" },
+  {id: 17, title: "Piccolo Bar e Flair", category: "Visual Design", img: "/assets/PicoloBar/p17-piccolo-bar-e-flair-web.png" },
+  {id: 18, title: "Sabiá Laranjeira Special Coffee", category: "Visual Design", img: "/assets/SabiaLaranjeira/p18-sabia-laranjeira-special-coffee-web.png" },
+  {id: 19, title: "Varb Metalúrgica", category: "Visual Design", img: "/assets/Varb/p19-varb-metalurgica-web.png" },
+  {id: 21, title: "Pra Construir - Marketplace", category: "UX/UI Design", img: "/assets/PraConstruir/p21-pra-construir-marketplace-web.png" },
 ];
 
 export default function Portfolio() {
