@@ -64,9 +64,10 @@ export default function Portfolio() {
       <NebulaBackground />
 
       <div className="relative z-10 select-none">
-        <h1 className="text-7xl md:text-6xl font-serif tracking-tighter leading-tight text-white mix-blend-difference">
+        {/* <h1 className="text-7xl md:text-6xl font-serif tracking-tighter leading-tight text-white mix-blend-difference">
           Louyse Praxedes
-        </h1>
+        </h1> */}
+        <Image src="/assets/AssinaturaBranca-Lou.png" alt="Louyse Praxedes" width={800} height={200} className="mx-auto mb-4" />
         <p className="text-sm md:text-base uppercase tracking-[0.5em] font-light mt-6 text-zinc-400">
           Senior Product Designer
         </p>
