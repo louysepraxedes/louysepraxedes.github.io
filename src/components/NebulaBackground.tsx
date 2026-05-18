@@ -95,7 +95,11 @@
 
 import React, { useEffect, useRef } from 'react';
 
-export const NebulaBackground = () => {
+type NebulaBackgroundProps = {
+  mode?: 'dark' | 'light';
+};
+
+export const NebulaBackground = ({ mode = 'dark' }: NebulaBackgroundProps) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const mouse = useRef({ x: 0, y: 0 });
 
@@ -128,9 +132,13 @@ export const NebulaBackground = () => {
     };
 
     const draw = (time: number) => {
-      // Background color
-      ctx.fillStyle = '#05050a';
-      ctx.fillRect(0, 0, canvas.width, canvas.height);
+      // Background fill (transparent for light mode)
+      if (mode === 'dark') {
+        ctx.fillStyle = '#05050a';
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+      } else {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+      }
 
       // 2. Draw Multi-Layered Nebulas
       nebulas.forEach((neb, i) => {
@@ -182,5 +190,5 @@ export const NebulaBackground = () => {
     };
   }, []);
 
-  return <canvas ref={canvasRef} className="absolute inset-0 z-0 bg-[#05050a]" />;
+  return <canvas ref={canvasRef} className="absolute inset-0 z-0 bg-transparent" />;
 };

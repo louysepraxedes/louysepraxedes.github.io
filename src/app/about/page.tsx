@@ -2,6 +2,7 @@
 
 import { motion, type Variants } from "framer-motion";
 import Image from "next/image";
+import { NebulaBackground } from "@/components/NebulaBackground";
 
 const skills = [
   "Product Design",
@@ -52,7 +53,9 @@ const itemVariants: Variants = {
 
 export default function About() {
   return (
-    <div className="min-h-screen bg-zinc-50 text-zinc-900 px-6 py-16 md:py-24 max-w-6xl mx-auto flex flex-col justify-center">
+    <div className="relative min-h-screen overflow-hidden text-zinc-100 px-6 py-16 md:py-24">
+      <NebulaBackground />
+      <div className="relative z-10 max-w-6xl mx-auto flex flex-col justify-center">
       
       {/* Hero Section: Text Left, Image Right */}
       <div className="grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
@@ -62,17 +65,17 @@ export default function About() {
           <h1 className="text-5xl md:text-7xl font-serif tracking-tight leading-tight">
             About Me
           </h1>
-          <div className="space-y-4 text-base md:text-lg leading-relaxed text-zinc-700 font-light">
+          <div className="space-y-4 text-base md:text-lg leading-relaxed text-zinc-200 font-light">
             <p>
               I’ve been working as a UX Designer for over 6 years, creating digital solutions in agile and collaborative environments. My core skills include user research, interface design, and prototyping, always focused on delivering intuitive and functional experiences.
             </p>
-            <p>
+            <p className="text-zinc-200">
               In addition to my UX expertise, I bring 11 years of experience as a Designer, with a strong background in UI, Visual Design, and Branding. This multidisciplinary foundation enhances my ability to connect aesthetics, strategy, and usability in every project.
             </p>
-            <p>
+            <p className="text-zinc-200">
               Recently, I contributed to the implementation of a portfolio sharing feature, optimizing user flows and improving interaction between advisors and clients. I also integrate artificial intelligence into my workflow to streamline processes, speed up design stages, and enhance user experience.
             </p>
-            <p className="font-normal text-zinc-900">
+            <p className="font-normal text-zinc-100">
               My work is guided by data, active listening, and cross-functional collaboration. I'm driven by the goal of creating digital experiences that are both human-centered and strategically aligned with business objectives.
             </p>
           </div>
@@ -91,14 +94,11 @@ export default function About() {
             <div className="absolute inset-0 border border-black/5 rounded-2xl pointer-events-none" />
           </div>
         </div>
-
       </div>
 
-      <hr className="my-16 border-zinc-200" />
-
       {/* Skills Section with Animated Badges */}
-      <div className="w-full">
-        <h2 className="text-xl md:text-2xl font-serif mb-8 text-zinc-800 tracking-tight">
+      <div className="w-full mt-24 text-center">
+        <h2 className="text-xl md:text-2xl font-serif mb-8 text-zinc-100 tracking-tight">
           Expertise & Skills
         </h2>
         
@@ -125,7 +125,7 @@ export default function About() {
           ))}
         </motion.div>
       </div>
-
     </div>
+  </div>
   );
 }
