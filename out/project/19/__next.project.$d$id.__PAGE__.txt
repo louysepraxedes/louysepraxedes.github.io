@@ -1,6 +1,7 @@
 1:"$Sreact.fragment"
-3:I[97367,["/_next/static/chunks/ff1a16fafef87110.js","/_next/static/chunks/0b082245f106d665.js"],"OutletBoundary"]
-4:"$Sreact.suspense"
-0:{"buildId":"sas9BqocOROw-NakVIdM8","rsc":["$","$1","c",{"children":["$L2",[["$","script","script-0",{"src":"/_next/static/chunks/f22e898208369013.js","async":true}]],["$","$L3",null,{"children":["$","$4",null,{"name":"Next.MetadataOutlet","children":"$@5"}]}]]}],"loading":null,"isPartial":false}
-5:null
-2:E{"digest":"NEXT_HTTP_ERROR_FALLBACK;404"}
+2:I[22016,["/_next/static/chunks/3d05824523dfe485.js","/_next/static/chunks/8a6de00a2aedc1df.js","/_next/static/chunks/f22e898208369013.js"],""]
+3:I[85437,["/_next/static/chunks/3d05824523dfe485.js","/_next/static/chunks/8a6de00a2aedc1df.js","/_next/static/chunks/f22e898208369013.js"],"Image"]
+4:I[97367,["/_next/static/chunks/ff1a16fafef87110.js","/_next/static/chunks/0b082245f106d665.js"],"OutletBoundary"]
+5:"$Sreact.suspense"
+0:{"buildId":"EKkSvJtuql81V9xyx5nno","rsc":["$","$1","c",{"children":[["$","div",null,{"className":"min-h-screen bg-[#fcfaf8] text-zinc-900","children":["$","div",null,{"className":"max-w-6xl mx-auto px-6 py-16","children":[["$","$L2",null,{"href":"/","className":"text-sm text-zinc-500 hover:text-violet-600 transition-colors","children":"← Back to home"}],["$","div",null,{"className":"mt-10 grid gap-12 lg:grid-cols-[1.2fr_0.8fr] items-start","children":[["$","div",null,{"children":[["$","p",null,{"className":"text-sm uppercase tracking-[0.35em] text-violet-700 font-semibold","children":"Visual Design"}],["$","h1",null,{"className":"mt-4 text-5xl font-serif tracking-tight text-zinc-950","children":"Varb Metalúrgica"}],["$","p",null,{"className":"mt-8 max-w-3xl text-lg leading-8 text-zinc-700","children":"A B2B manufacturing brand case study centered on clarity, professionalism, and material storytelling."}]]}],["$","div",null,{"className":"relative aspect-[4/3] overflow-hidden rounded-sm bg-zinc-100 shadow-xl shadow-zinc-200/50","children":["$","$L3",null,{"src":"/assets/Varb/p19-varb-metalurgica-web.png","alt":"Varb Metalúrgica","fill":true,"className":"object-cover"}]}]]}]]}]}],[["$","script","script-0",{"src":"/_next/static/chunks/f22e898208369013.js","async":true}]],["$","$L4",null,{"children":["$","$5",null,{"name":"Next.MetadataOutlet","children":"$@6"}]}]]}],"loading":null,"isPartial":false}
+6:null
