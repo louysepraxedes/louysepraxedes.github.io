@@ -2,32 +2,10 @@
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
-import {NebulaBackground} from "@/components/NebulaBackground";
-// import Link from "next/link";
+import Link from "next/link";
+import { NebulaBackground } from "@/components/NebulaBackground";
+import { projects } from "@/lib/projects";
 
-const projects = [
-  {id: 7, title: "Gorilla - Mobile App", category: "User Experience", img: "/assets/Gorila/p7-gorilla-mobile-app.png" },
-  {id: 0, title: "Plenno", category: "User Experience", img: "/assets/Plenno/p0-plenno.png" },
-  { id: 1, title: "Somos Cataguá 2019/2020", category: "Visual Design", img: "/assets/p1-catagua-construtora.jpg" },
-  { id: 2, title: "Health Awareness Campaigns", category: "Visual Design & Endomarketing", img: "/assets/p2-catagua-construtora-saude.png" },
-  { id: 3, title: "Connecting Plus 2016", category: "Xilogravura & Social Media", img: "/assets/p3-connecting-plus.png" },
-  { id: 4, title: "Lillo 2013/2014", category: "Visual Design & Social Media", img: "/assets/p4-lillo.png" },
-  {id: 5, title: "SupraSoy 2013/2014", category: "Visual Design & Social Media", img: "/assets/p5-suprasoy-sports.png" },
-  {id: 6, title: "Miró Marketing", category: "Brand Development", img: "/assets/p6-miro-branding.png" },//
-  {id: 8, title: "Não + Fat", category: "Brand Development", img: "/assets/p8-nao-fat.png" },
-  {id: 9, title: "Coca-Cola Project", category: "Fictional Project", img: "/assets/p9-coca-cola-fictional.png" },
-  {id: 10, title: "Água Viva", category: "Visual Design", img: "/assets/AguaViva/p10-agua-viva-web.png" },
-  {id: 11, title: "Azul TI", category: "Visual Design", img: "/assets/p11-azul-ti-web.png" },
-  {id: 12, title: "Connecting Plus", category: "Visual Design", img: "/assets/p12-connecting-plus-web.png" },
-  {id: 13, title: "Jaque Borges", category: "Visual Design", img: "/assets/p13-jaque-borges-web.png" },
-  {id: 14, title: "LAP", category: "Visual Design", img: "/assets/LAP/p14-lap-web.png" },
-  {id: 15, title: "Neuronio Adicional", category: "Visual Design", img: "/assets/NeuronioAdicional/p15-neuronio-adicional-web.png" },
-  {id: 16, title: "Pet Molhado", category: "Visual Design", img: "/assets/PetMolhado/p16-pet-molhado-web.png" },
-  {id: 17, title: "Piccolo Bar e Flair", category: "Visual Design", img: "/assets/PicoloBar/p17-piccolo-bar-e-flair-web.png" },
-  {id: 18, title: "Sabiá Laranjeira Special Coffee", category: "Visual Design", img: "/assets/SabiaLaranjeira/p18-sabia-laranjeira-special-coffee-web.png" },
-  {id: 19, title: "Varb Metalúrgica", category: "Visual Design", img: "/assets/Varb/p19-varb-metalurgica-web.png" },
-  {id: 21, title: "Pra Construir - Marketplace", category: "UX/UI Design", img: "/assets/PraConstruir/p21-pra-construir-marketplace-web.png" },
-];
 
 export default function Portfolio() {
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
@@ -107,8 +85,7 @@ export default function Portfolio() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-x-12 md:gap-y-24">
           {projects.map((project) => (
-            // <Link href={`/project/${project.id}`} key={project.id} className="group block">
-            <div key={project.id} className="group block">
+            <Link href={`/project/${project.id}`} key={project.id} className="group block">
               <div className="relative aspect-[4/3] overflow-hidden rounded-sm bg-zinc-100">
                 {/* Image with Magic Color Filter on Hover */}
                 <Image
@@ -122,7 +99,7 @@ export default function Portfolio() {
                 
                 <div className="absolute bottom-6 left-6 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
                   <span className="bg-white/90 backdrop-blur-md px-4 py-2 text-[10px] uppercase font-bold tracking-widest rounded-full">
-                    View Case
+                    <span className="hover:text-violet-600 transition-colors duration-300">View Case</span>
                   </span>
                 </div>
               </div>
@@ -131,15 +108,14 @@ export default function Portfolio() {
                 <h3 className="text-xl font-medium tracking-tight">{project.title}</h3>
                 <p className="text-sm text-zinc-500 font-light">{project.category}</p>
               </div>
-            </div>
-            // </Link>
+            </Link>
           ))}
         </div>
       </section>
 
       {/* CTA Section */}
       <footer className="py-32 px-6 text-center border-t border-zinc-100">
-        <h2 className="text-5xl md:text-7xl font-serif  mb-8">Let's create.</h2>
+        <h2 className="text-5xl md:text-7xl font-serif  mb-8">Let&apos;s create.</h2>
         <a href="mailto:loupraxedes@gmail.com" className="text-lg border-b border-zinc-900 pb-1 hover:text-violet-600 hover:border-violet-600 transition-all">
           loupraxedes@gmail.com
         </a>
