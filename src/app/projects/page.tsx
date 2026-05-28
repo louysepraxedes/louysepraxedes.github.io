@@ -52,7 +52,7 @@ export default function Projects() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            github.com/anaarezo
+            github.com/louysepraxedes
           </a>
         </div>
       ) : projects === null ? (
