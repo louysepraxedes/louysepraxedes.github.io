@@ -121,6 +121,90 @@ export const projects: Project[] = [
     category: "User Experience",
     img: "/assets/Plenno/p0-plenno.png",
     description: "A product and interface design case exploring accessible workflows, visual clarity, and responsive interactions.",
+    header: [
+      "Plenno · Healthcare SaaS",
+      "Lead Product Designer ·",
+    ],
+    gallery: [
+      "/assets/Plenno/p0-plenno.png",
+      "/assets/Plenno/p0-default-contracts-screen.png",
+      "/assets/Plenno/p0-documentation.png",
+      "/assets/Plenno/p0-edit.png",
+      "/assets/Plenno/p0-favorites-default.png",
+      "/assets/Plenno/p0-history.png",
+      "/assets/Plenno/p0-org-documentation.png",
+      "/assets/Plenno/p0-org-doc-history.png",
+      "/assets/Plenno/p0-modal-add.png",
+      "/assets/Plenno/p0-modal-edit.png",
+      "/assets/Plenno/p0-dialog-delete.png",
+      "/assets/Plenno/p0-tooltip-addition.png",
+    ],
+    body: [
+      {
+        title: "Resumo executivo",
+        paragraphs: [
+          "O Plenno tinha uma sidebar única para todos os usuários — gestores financeiros, coordenadores médicos e diretores viam o mesmo menu, independente do que precisavam fazer. Redesenhei a navegação como um componente contextual que se reconfigura conforme a persona e a permissão ativa, entregando 7 jornadas distintas a partir de um único componente — incorporado ao design system e em produção.",
+        ],
+      },
+      {
+        title: "01 · O produto",
+        paragraphs: [
+          "Um SaaS B2B de gestão de plantões médicos usado por UPAs, hospitais e prefeituras. Em um único produto convivem RH, financeiro, compliance documental e operação de campo. Meu papel foi liderança de design end-to-end: descoberta, arquitetura de informação, definição de componentes e condução do time de design.",
+        ],
+      },
+      {
+        title: "02 · O problema",
+        paragraphs: [
+          "A sidebar era uma árvore vertical fixa com todos os módulos do produto. O gestor financeiro via os mesmos itens que o coordenador médico — e nenhum dos dois encontrava rápido o que precisava. O time de suporte recebia tickets recorrentes para 'encontrar' páginas que estavam a três cliques de distância.",
+          "Antes → Cascata hierárquica, cega ao contexto, sem indicação de localização. Depois → Sidebar que se reconfigura conforme o contexto ativo do usuário.",
+        ],
+      },
+      {
+        title: "03 · Descoberta & Objetivos",
+        paragraphs: [
+          "A investigação começou nos logs de suporte, não no Figma. Entrevistas com gestores e análise de tickets revelaram quatro insights centrais:",
+          "Comportamento — o usuário gasta >80% do tempo dentro de um único contrato ou unidade. A sidebar tratava todas as opções como igualmente prováveis. Permissionamento — ao cruzar permissões reais com tarefas reais, sete jornadas distintas emergiram do mesmo produto. Densidade — telas como Faturamento e Documentação têm 10+ colunas. Em monitor 1366px, a sidebar colapsada deixou de ser feature — virou requisito. Reuso — reusar a mesma anatomia (tabela, filtros, kanban) variando apenas o conteúdo da sidebar: o usuário aprende uma vez, aplica em sete lugares.",
+          "Quatro objetivos guiaram o projeto: reduzir esforço cognitivo na navegação · separar jornadas por persona · padronizar o componente Sidebar no design system · reduzir custo de onboarding e ruído com suporte.",
+        ],
+      },
+      {
+        title: "04 · A solução · 7 Contextos",
+        paragraphs: [
+          "A sidebar opera em sete contextos. Cada contexto é uma combinação (persona × intenção × permissão) que determina exatamente quais páginas são exibidas. Não são telas diferentes — é o mesmo componente carregando estruturas diferentes.",
+          "Contexto 01: Contrato — operação do contrato com profissionais, documentos, faturamento e indicadores. Contexto 02: Unidades — visão da unidade hospitalar com escalas, plantões e equipe operacional. Contexto 03: Favoritos — camada pessoal com páginas fixadas pelo próprio usuário. Contexto 04: ORG — vista executiva com dashboards agregados. Contexto 05: Backoffice — painel interno com permissões e operações em lote. Contexto 06: Base Global — registro mestre de profissionais. Contexto 07: Não Configurado — estado de fallback com mensagem construtiva.",
+          "Dois modos de exibição: expandida (navegação completa) e colapsada (libera até ~200px horizontais para tabelas densas).",
+        ],
+      },
+      {
+        title: "05 · Deep dive · Contexto Contrato",
+        paragraphs: [
+          "O contexto principal — onde gestores resolvem o dia-a-dia de profissionais, documentos e faturamento. 14 páginas organizadas em hierarquia de 3 níveis:",
+          "Lista de Contratos → ponto de entrada. [Contrato ativo] → Edição do Contrato (5 tabs), Indicadores de Presença (KPIs de conformidade), Profissionais (Cadastro e Documentação com Histórico), Faturamento (Gestão e Fluxo Financeiro em kanban), Unidades vinculadas.",
+          "A transição Contrato → Unidade é imperceptível: o header persiste, a sidebar se reconfigura. O usuário entende que continua dentro do mesmo registro — apenas vendo outra faceta dele.",
+        ],
+      },
+      {
+        title: "06 · Telas principais · Contexto Contrato",
+        paragraphs: [
+          "Nove telas desenhadas em dois estados (expandida / colapsada): Lista de Contratos (tabela densa, status pills, CTA contextual), Menu Contextual (hierarquia 3 níveis, drill-down sem perder o pai), Indicadores de Presença (KPI cards, barras de progresso, cor como atalho mental), Cadastro de Profissionais (sinalização inline de pendência documental), Documentação (matriz 30 colunas, tabs), Histórico (auditoria de versões), Gestão de Faturamento (filtros encadeados, tabela larga), Fluxo Financeiro em Kanban (3 estados semânticos), Edição do Contrato (multi-tabs, ~200px adicionais na colapsada).",
+        ],
+      },
+      {
+        title: "07 · Design System & Microinterações",
+        paragraphs: [
+          "A sidebar foi incorporada ao design system do produto com tokens, estados, comportamentos e acessibilidade documentados.",
+          "Microinterações chave: Toggle de borda viva — botão ancorado na fronteira entre sidebar e conteúdo, sempre acessível. Favoritos persistentes — páginas fixadas que sobrevivem a trocas de contexto. Modo claro/escuro — toggle no rodapé da sidebar. Hierarquia visível — contrato ativo destacado com nível filho aberto. Tokens semânticos: Plenno Teal #0F5C5C · Valoração #F59E0B · Disputa #A855F7 · Faturada #10B981.",
+        ],
+      },
+      {
+        title: "08 · Resultados",
+        paragraphs: [
+          "'Antes eu abria a navegação e travava. Hoje sinto que ela já sabe o que eu vim fazer.' — Gestora financeira, cliente Plenno · feedback pós-lançamento",
+          "Localização imediata — usuários reportaram melhora na velocidade para encontrar páginas no dia-a-dia. Menos rolagem horizontal — a sidebar colapsada viabilizou trabalho em monitores 1366px. Reuso no design system — o time passou a criar novos módulos sem reinventar navegação. Onboarding mais curto — o contexto guia sem exigir mapa mental.",
+          "Navegação é arquitetura, não decoração. Os 7 contextos, do operacional ao silencioso, formam um sistema — não sete produtos.",
+        ],
+      },
+    ],
   },
   {
     id: 1,
