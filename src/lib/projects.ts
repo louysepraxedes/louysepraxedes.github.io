@@ -17,7 +17,7 @@ export type Project = {
 export const projects: Project[] = [
   {
     id: 7,
-    title: "Gorilla - Mobile App",
+    title: "Gorila - Mobile App",
     category: "User Experience",
     img: "/assets/Gorila/p7-gorilla-mobile-app.png",
     description: "A mobile-first UX case study centered on intuitive navigation, motion, and accessibility for a modern app experience.",
